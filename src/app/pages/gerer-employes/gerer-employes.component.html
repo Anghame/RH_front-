@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">liste des employés
+
+            </h3>
+          </div>
+
+        <!-- 
+                        <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+        -->
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Matricule </th>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Prenom</th>
+                 
+                  <th scope="col">Email</th>
+                  <th scope="col">Date de naissance</th>
+                  <th scope="col">Numéro de téléphone</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let item of tab ;index as i">
+                  
+
+                  <td>
+                    {{item.Matricule}}
+                  </td>
+                  <td>
+                    {{item.Nom}}
+
+                  </td>
+
+            
+                  
+                  <td>
+                    {{item.Prenom}}
+
+                  </td>
+                  <td>
+                    {{item.email}}
+
+                
+                </td>
+                <td>
+                  {{item.Date_n}}
+
+                </td>
+                <td>
+                  {{item.telephone}}
+
+                </td>
+                  <td>
+                    <a class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                    <a class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xe92b;</i></a>
+                </td>
+                 
+                 
+              
+                </tr>
+                
+                
+                
+               
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
