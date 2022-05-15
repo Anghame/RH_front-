@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       {
         this.dataReceived=response
         this.asd.saveDataProfil(this.dataReceived.token)
-       this.route.navigate(['/user-profile'])
+       this.route.navigateByUrl('/user-profile')
         
       },err=>this.messageAuthError="invalid email and password")
 

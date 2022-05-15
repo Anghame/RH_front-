@@ -9,7 +9,9 @@
     <div class="nav-link">
       <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
         <i class="fas fa-users"></i> 
-      </div> <b>Espace Employé</b>
+      </div> 
+      <b *ngIf="currentUserData.role=='employe'">Espace Employé</b>
+      <b *ngIf="currentUserData.role=='rh'">Espace RH</b>
     </div>
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
@@ -40,18 +42,9 @@
             <i class="ni ni-single-02"></i>
             <span>My profile</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
-            <i class="ni ni-settings-gear-65"></i>
-            <span>Settings</span>
-          </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
-            <i class="ni ni-calendar-grid-58"></i>
-            <span>Activity</span>
-          </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
-            <i class="ni ni-support-16"></i>
-            <span>Support</span>
-          </a>
+         
+       
+         
           <div class="dropdown-divider"></div>
           <a href="#!" class="dropdown-item">
             <i class="ni ni-user-run"></i>
