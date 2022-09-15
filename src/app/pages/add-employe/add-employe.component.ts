@@ -12,10 +12,25 @@ import {  EmployeServiceService } from '../../services/employe-service.service';
 })
 export class AddEmployeComponent implements OnInit {
 
+  messageErr="";
+  m="";
   constructor(private ds:EmployeServiceService,private route:Router) { }
 
   ngOnInit(): void {
   }
-  add(f:any){}
+  add(f:any){let data=f.value
+    console.log(data)
+    this.ds.addEmploye(data).subscribe(response=>{
+    console.log(response)
+
+      this.route.navigate(['/GererEmployes'])
+
+    },(err:HttpErrorResponse)=>{
+      this.messageErr=err.error
+      this.m=this.messageErr['error']
+       console.log(this.messageErr)
+       console.log(err.status)
+    })
+  }
 
 }

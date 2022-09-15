@@ -12,6 +12,7 @@ import { ReclamationComponent } from '../../pages/reclamation/reclamation.compon
 import { GererEmployesComponent } from '../../pages/gerer-employes/gerer-employes.component';
 import { AlldemandesComponent } from '../../pages/alldemandes/alldemandes.component';
 import { AddEmployeComponent } from '../../pages/add-employe/add-employe.component';
+import {UpdateEmployeComponent} from '../../pages/update-employe/update-employe.component';
 
 
 
@@ -29,6 +30,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'GererEmployes',   component: GererEmployesComponent },
     { path: 'demandes',   component: AlldemandesComponent },
     { path: 'AddEmploye',   component: AddEmployeComponent },
+    {path:'updateEmploye/:id', component:UpdateEmployeComponent}
 
 
 

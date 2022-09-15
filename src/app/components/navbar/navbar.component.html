@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
   <div class="container-fluid">
     <!-- Brand -->
@@ -23,8 +24,18 @@
               <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg">
             </span>
             <div class="media-body ml-2 d-none d-lg-block">
-              <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
-            </div>
+              <span class="mb-0 text-sm  font-weight-bold">{{nom}}</span>
+            </div> 
+            <div class="media-body ml-2 d-none d-lg-block">
+
+            </div> 
+            <div class="media-body ml-2 d-none d-lg-block">
+              <a (click)="logout()" class="w3-bar-item w3-button w3-hover-white"><i class="ni ni-button-power"></i></a> 
+
+            </div> 
+           
+        
+          
           </div>
         </a>
         <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>

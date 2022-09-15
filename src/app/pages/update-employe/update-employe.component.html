@@ -19,12 +19,12 @@
       <div class="col-lg-6 col-md-8">
         <div class="card bg-secondary shadow border-0">
           <div class="card-header bg-transparent pb-5">
-            <div class="text-muted text-center mt-2 mb-4"><small>Ajouter un nouveaux employé</small></div>
+            <div class="text-muted text-center mt-2 mb-4"><small>Modifier employé</small></div>
          
           </div>
           <div class="card-body px-lg-5 py-lg-5">
            
-            <form #f="ngForm" (ngSubmit)="add(f)">
+            <form #f="ngForm"  (ngSubmit)="updatenewstudent(f)" > <!-- (ngSubmit)="add(f)"-->
               <div class="form-group">
                 <div class="input-group input-group-alternative mb-3">
                   <div class="input-group-prepend">
@@ -41,10 +41,6 @@
                       <input placeholder="Matricule" type="text" class="form-control" placeholder="Matricule" required name="Matricule" #Matricule="ngModel" ngModel minlength="2" maxlength="20">
                     </div>
                   </div>
-                  <div class="alert alert-danger" *ngIf="Matricule.errors?.required && Matricule.touched">
-                    Matricule is required
-                  </div>
-                  
               <div class="form-group">
                 <div class="input-group input-group-alternative mb-3">
                   <div class="input-group-prepend">
@@ -53,9 +49,6 @@
                   <input class="form-control" placeholder="Nom" type="text" class="form-control" placeholder="Nom" required name="Nom" #Nom="ngModel" ngModel minlength="2" maxlength="20">
                 </div>
               </div>
-              <div class="alert alert-danger" *ngIf="Nom.errors?.required && Nom.touched">
-                Nom is required
-              </div>
               <div class="form-group">
                 <div class="input-group input-group-alternative mb-3">
                   <div class="input-group-prepend">
@@ -63,9 +56,6 @@
                   </div>
                   <input  placeholder="Prénom" type="text" class="form-control" placeholder="Prenom" required name="Prenom" #Prenom="ngModel" ngModel minlength="2" maxlength="20">
                 </div>
-              </div>
-              <div class="alert alert-danger" *ngIf="Prenom.errors?.required && Prenom.touched">
-                Prenom is required
               </div>
 
               <div class="form-group">
@@ -76,13 +66,6 @@
                   <input type="email" class="form-control" placeholder="email" email required name="email" #email="ngModel" ngModel>
                 </div>
               </div>
-              <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched">
-                email is required
-              </div>
-        
-              <div class="alert alert-danger" *ngIf="email.errors?.email && email.touched">
-                the input must be email not string
-              </div>
               <div class="form-group">
                 <div class="input-group input-group-alternative mb-3">
                   <div class="input-group-prepend">
@@ -91,20 +74,13 @@
                   <input class="form-control" placeholder="Date de naissance" type="text" Date_n required name="Date_n" #Date_n="ngModel" ngModel>
                 </div>
               </div>
-              <div class="alert alert-danger" *ngIf="Date_n.errors?.required && Date_n.touched">
-                Date de naissance is required
-              </div>
-
               <div class="form-group">
                 <div class="input-group input-group-alternative mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
                   </div>
-                  <input placeholder="Numéro de téléphone"  type="number" class="form-control" placeholder="telephone" required name="telephone" #telephone="ngModel" ngModel>
+                  <input placeholder="Numéro de téléphone"  type="number" class="form-control" placeholder="telephone" required name="telephone" #phone="ngModel" ngModel>
                 </div>
-              </div>
-              <div class="alert alert-danger" *ngIf="telephone.errors?.required && telephone.touched">
-                phone is required
               </div>
               <div class="form-group">
                 <div class="input-group input-group-alternative">
@@ -122,12 +98,9 @@
                   <input class="form-control" placeholder="role" type="text" required name="role" #role="ngModel" ngModel>
                 </div>
               </div>
-              <div class="alert alert-danger" *ngIf="messageErr">
-                {{m}}
-              </div>
 
               <div class="text-center">
-                <button class="btn btn-primary mt-4">Ajouter</button>
+                <button class="btn btn-primary mt-4">Modifier</button>
               </div>
             </form>
           </div>
@@ -136,3 +109,4 @@
     </div>
   </div>
   
+

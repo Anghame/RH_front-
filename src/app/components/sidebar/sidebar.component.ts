@@ -35,6 +35,8 @@ export class SidebarComponent implements OnInit {
 
   public menuItems: any[];
   public isCollapsed = true;
+  token:any
+  role:any;
 
   constructor(private router: Router) { }
 
@@ -43,5 +45,8 @@ export class SidebarComponent implements OnInit {
     this.router.events.subscribe((event) => {
       this.isCollapsed = true;
    });
+   this.token=JSON.parse(localStorage.getItem("token"));
+   this.role=this.token.role;
+   console.log('i role navbar ', this.role)
   }
 }

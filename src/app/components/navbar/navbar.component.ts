@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  token:any;
+  nom :any;
+ 
   public focus;
   public listTitles: any[];
   public location: Location;
@@ -18,6 +21,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
+    this.token=JSON.parse(localStorage.getItem("token"));
+   this.nom=this.token.username;
+   console.log('i nomnavbar ', this.nom)
   }
   getTitle(){
     var titlee = this.location.prepareExternalUrl(this.location.path());
@@ -31,6 +37,10 @@ export class NavbarComponent implements OnInit {
         }
     }
     return 'Dashboard';
+  }
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
   }
 
 }

@@ -33,29 +33,42 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <!--
+                   <ng-container *ngFor="let product of products">
+    <li *ngIf="product.distributor.id == distributor.id">dist</li>
+  </ng-container>
+                -->
+                <ng-container *ngFor="let item of tabA ;index as i">
+                <tr *ngIf="item.etat=='non traite'" >
 
                   <td>
+                    {{item.nomD}}  {{item.prenomD}}
                   </td>
                   <td>
+                    {{item.Date_depot}}
  
                   </td>
                   <td>
+                    {{item.somme}} Dt
 
                   </td>
                   <td>
+                    {{item.raison}}
 
     
 
                 </td>
                   <td>
-                    <a href="#" class="view" title="View Details" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a>
+                   <!-- <a href="#" class="view" title="View Details" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a>-->
+                    <button type="button" class="btn btn-outline-primary" (click)="accepterDemande(item._id,item.nomD,item.prenomD,item.Date_depot,item.somme,item.raison)">Accepter</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="refuserDemande(item._id,item.nomD,item.prenomD,item.Date_depot,item.somme,item.raison)">refuser</button>
 
                   </td>
                  
                  
                 
                 </tr>
+              </ng-container>
                 
                 
                 
@@ -91,29 +104,36 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <ng-container  *ngFor="let item of tabC ;index as i">
+                  <tr *ngIf="item.etat=='non traite'">
   
                     <td>
+                      {{item.nomD}}  {{item.prenomD}}
                     </td>
                     <td>
+                      {{item.Date_depot}}
    
                     </td>
                     <td>
-  
+                      {{item.date_d}}
                     </td>
                     <td>
+                      {{item.nombre_jour}}
                
                     </td>
                     <td>
-                        
+                      {{item.typeConge}}
                     </td>
                     <td>
-                        <a href="#" class="view" title="View Details" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a>
-    
+                        <!--<a href="#" class="view" title="View Details" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a>-->
+                        <button type="button" class="btn btn-outline-primary" (click)="accepterDemandeC(item._id,item.nomD,item.prenomD,item.Date_depot,item.nombre_jour,item.typeConge)">Accepter</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="refuserDemandeC(item._id,item.nomD,item.prenomD,item.Date_depot,item.nombre_jour,item.typeConge)">refuser</button>
+
                       </td>
                    
                   
                   </tr>
+                </ng-container>
                   
                   
                   
@@ -148,26 +168,35 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-  
-                    <td>
-                    </td>
-                    <td>
-   
-                    </td>
-                    <td>
-  
-                    </td>
-                    <td>
 
+                  <ng-container  *ngFor="let item of tabR ;index as i">
+                    <tr *ngIf="item.etat=='non traite'">
+  
+                    <td>
+                      {{item.nomD}}  {{item.prenomD}}
+                    </td>
+                    <td>
+                      {{item.Date_depot}}
+                    </td>
+                    <td>
+                      {{item.type_R}}
+  
+                    </td>
+                    <td>
+                      {{item.text_R}}
                     </td>
                          <td>
-                    <a href="#" class="view" title="View Details" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a>
+                    <!--<a href="#" class="view" title="View Details" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a>-->
+                    <button type="button" class="btn btn-outline-primary" (click)="accepterDemandeR(item._id,item.nomD,item.prenomD,item.Date_depot,item.type_R,item.text_R)">Accepter</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="refuserDemandeR(item._id,item.nomD,item.prenomD,item.Date_depot,item.type_R,item.text_R)">refuser</button>
+
+
 
                   </td>
                    
                   
                   </tr>
+                  </ng-container>
                   
                   
                   
